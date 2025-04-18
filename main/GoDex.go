@@ -21,8 +21,8 @@ func main() {
 		case "LIST":
 			utility.ListAllPokemonNames(pokedex)
 		case "ADD":
-			//addPokemon()
-			continue // TODO : Complete
+			pokemon := utility.RequestPokemon()
+			utility.AddPokemon(pokemon.Name, pokemon, pokedex)
 		case "GET":
 			pokemonName := utility.RequestPokemonName()
 			utility.GetPokemon(pokemonName, pokedex)

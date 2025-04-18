@@ -6,11 +6,7 @@ import (
 )
 
 func AddPokemon(name string, pokemon model.Pokemon, pokedex map[string]model.Pokemon) {
-	if _, ok := pokedex[name]; ok {
-		return
-	} else {
-		pokedex[name] = pokemon
-	}
+	ValidateAndAddPokemon(name, pokemon, pokedex)
 }
 
 func GetPokemon(name string, pokedex map[string]model.Pokemon) {
@@ -24,5 +20,13 @@ func GetPokemon(name string, pokedex map[string]model.Pokemon) {
 func ListAllPokemonNames(pokedex map[string]model.Pokemon) {
 	for _, pokemon := range pokedex {
 		fmt.Println(pokemon.Name)
+	}
+}
+
+func ValidateAndAddPokemon(name string, pokemon model.Pokemon, pokedex map[string]model.Pokemon) {
+	if _, ok := pokedex[name]; ok {
+		return
+	} else {
+		pokedex[name] = pokemon
 	}
 }
