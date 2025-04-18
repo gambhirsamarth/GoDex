@@ -30,5 +30,5 @@ func main() {
 			utility.PrintInvalidCommandMessage()
 		}
 	}
-	utility.PrintWelcomeMessage()
+	utility.PrintExitMessage()
 }

@@ -21,3 +21,8 @@ func PrintInvalidCommandMessage() {
 	fmt.Println()
 	fmt.Println("Invalid command")
 }
+
+func PrintExitMessage() {
+	fmt.Println()
+	fmt.Println("Exiting GoDex")
+}
