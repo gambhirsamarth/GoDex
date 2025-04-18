@@ -89,10 +89,7 @@ func main() {
 	running := true
 	for running {
 		printAvailableCommands()
-		requestUserCommand()
-		var command string
-		fmt.Scanln(&command)
-
+		command := requestUserCommand()
 		switch command {
 		case "EXIT":
 			running = false
@@ -138,9 +135,11 @@ func printInvalidCommandMessage() {
 	fmt.Println("Invalid command")
 }
 
-func requestUserCommand() {
+func requestUserCommand() (command string) {
 	fmt.Println()
 	fmt.Println("Please enter a command: ")
+	fmt.Scanln(&command)
+	return
 }
 
 func requestPokemonName() (pokemonName string) {
