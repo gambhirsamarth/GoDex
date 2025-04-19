@@ -3,6 +3,7 @@ package main
 import (
 	"GoDex/main/service"
 	"GoDex/main/utility"
+	"strings"
 )
 
 func main() {
@@ -13,6 +14,7 @@ func main() {
 	for running {
 		utility.PrintAvailableCommands()
 		command := utility.RequestUserCommand()
+		command = strings.ToUpper(command)
 		switch command {
 		case "EXIT":
 			running = false
