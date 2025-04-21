@@ -1,6 +1,8 @@
 package utility
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func PrintWelcomeMessage() {
 	fmt.Println()
@@ -25,6 +27,11 @@ func PrintInvalidCommandMessage() {
 func PrintExitMessage() {
 	fmt.Println()
 	fmt.Println("Exiting GoDex")
+}
+
+func PrintBattleStartMessage(pokemonOne, pokemonTwo string) {
+	fmt.Println()
+	fmt.Printf("Battle Start: %s vs %s\n", pokemonOne, pokemonTwo)
 }
 
 func PrintAttackMessage(attackerName, defenderName string, damage, hp int) {

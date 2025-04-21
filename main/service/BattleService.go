@@ -3,11 +3,10 @@ package service
 import (
 	"GoDex/main/model"
 	"GoDex/main/utility"
-	
 )
 
 func Battle(p1, p2 model.Pokemon) {
-	fmt.Printf("Battle Start: %s vs %s\n", p1.Name, p2.Name)
+	utility.PrintBattleStartMessage(p1.Name, p2.Name)
 
 	for p1.HP > 0 && p2.HP > 0 {
 		// p1 attacks p2
