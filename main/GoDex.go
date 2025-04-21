@@ -29,9 +29,13 @@ func main() {
 		case "BATTLE":
 			pokemonOneName := utility.RequestPokemonName()
 			pokemonTwoName := utility.RequestPokemonName()
-			pokemonOne := pokedex[pokemonOneName]
-			pokemonTwo := pokedex[pokemonTwoName]
-			service.Battle(pokemonOne, pokemonTwo)
+			if _, okOne := pokedex[pokemonOneName]; okOne {
+				if _, okTwo := pokedex[pokemonTwoName]; okTwo {
+					pokemonOne := pokedex[pokemonOneName]
+					pokemonTwo := pokedex[pokemonTwoName]
+					service.Battle(pokemonOne, pokemonTwo)
+				}
+			}
 		default:
 			utility.PrintInvalidCommandMessage()
 		}
