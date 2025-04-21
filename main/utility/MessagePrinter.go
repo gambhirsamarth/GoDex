@@ -26,3 +26,13 @@ func PrintExitMessage() {
 	fmt.Println()
 	fmt.Println("Exiting GoDex")
 }
+
+func PrintAttackMessage(attackerName, defenderName string, damage, hp int) {
+	fmt.Println()
+	fmt.Printf("%s attacks %s for %d damage. %s's HP is now %d.", attackerName, defenderName, damage, defenderName, hp)
+}
+
+func PrintBattleWinner(winner, loser string) {
+	fmt.Println()
+	fmt.Printf("%s has fainted! %s wins!", loser, winner)
+}
