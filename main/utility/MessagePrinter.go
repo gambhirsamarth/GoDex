@@ -16,6 +16,7 @@ func PrintAvailableCommands() {
 	fmt.Println("ADD : to add a Pokemon")
 	fmt.Println("LIST : to list all Pokemon names")
 	fmt.Println("GET : to get pokemon details")
+	fmt.Println("BATTLE : to start a battle between two Pokemons")
 	fmt.Println("EXIT : to exit GoDex")
 }
 

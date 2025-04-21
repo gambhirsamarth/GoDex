@@ -18,8 +18,6 @@ func main() {
 		switch command {
 		case "EXIT":
 			running = false
-			break
-
 		case "LIST":
 			utility.ListAllPokemonNames(pokedex)
 		case "ADD":
@@ -28,6 +26,12 @@ func main() {
 		case "GET":
 			pokemonName := utility.RequestPokemonName()
 			utility.GetPokemon(pokemonName, pokedex)
+		case "BATTLE":
+			pokemonOneName := utility.RequestPokemonName()
+			pokemonTwoName := utility.RequestPokemonName()
+			pokemonOne := pokedex[pokemonOneName]
+			pokemonTwo := pokedex[pokemonTwoName]
+			service.Battle(pokemonOne, pokemonTwo)
 		default:
 			utility.PrintInvalidCommandMessage()
 		}
