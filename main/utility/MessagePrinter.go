@@ -1,6 +1,7 @@
 package utility
 
 import (
+	"GoDex/main/model"
 	"fmt"
 )
 
@@ -43,4 +44,48 @@ func PrintAttackMessage(attackerName, defenderName string, damage, hp int) {
 func PrintBattleWinner(winner, loser string) {
 	fmt.Println()
 	fmt.Printf("%s has fainted! %s wins!", loser, winner)
+}
+
+func PrintRequestCommandMessage() {
+	fmt.Println()
+	fmt.Println("Please enter a command: ")
+}
+
+func PrintRequestPokemonNameMessage() {
+	fmt.Println()
+	fmt.Println("Please enter the Pokemon name: ")
+}
+
+func PrintRequestPokemonTypeMessage() {
+	fmt.Println()
+	fmt.Println("Please enter the Pokemon type: ")
+}
+
+func PrintRequestPokemonHPMessage() {
+	fmt.Println()
+	fmt.Println("Please enter the Pokemon HP: ")
+}
+
+func PrintRequestPokemonAttackMessage() {
+	fmt.Println()
+	fmt.Println("Please enter the Pokemon attack: ")
+}
+
+func PrintRequestPokemonDefenseMessage() {
+	fmt.Println()
+	fmt.Println("Please enter the Pokemon defense: ")
+}
+
+func PrintPokemonNotFoundMessage(pokemonName string) {
+	fmt.Println()
+	fmt.Printf("Pokemon %s not found", pokemonName)
+}
+
+func PrintPokemonModel(pokemon model.Pokemon) {
+	fmt.Println(pokemon)
+}
+
+func printPokemonName(pokemonName string) {
+	fmt.Println()
+	fmt.Printf("Pokemon name: %s", pokemonName)
 }

@@ -6,43 +6,37 @@ import (
 )
 
 func RequestUserCommand() (command string) {
-	fmt.Println()
-	fmt.Println("Please enter a command: ")
+	PrintRequestCommandMessage()
 	fmt.Scanln(&command)
 	return
 }
 
 func RequestPokemonName() (pokemonName string) {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon name: ")
+	PrintRequestPokemonNameMessage()
 	fmt.Scanln(&pokemonName)
 	return
 }
 
 func RequestPokemonType() (pokemonType string) {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon type: ")
+	PrintRequestPokemonTypeMessage()
 	fmt.Scanln(&pokemonType)
 	return
 }
 
 func RequestPokemonHP() (pokemonHP int) {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon HP: ")
+	PrintRequestPokemonHPMessage()
 	fmt.Scanln(&pokemonHP)
 	return
 }
 
 func RequestPokemonAttack() (pokemonAttack int) {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon Attack: ")
+	PrintRequestPokemonAttackMessage()
 	fmt.Scanln(&pokemonAttack)
 	return
 }
 
 func RequestPokemonDefense() (pokemonDefense int) {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon Defense: ")
+	PrintRequestPokemonDefenseMessage()
 	fmt.Scanln(&pokemonDefense)
 	return
 }
@@ -54,10 +48,10 @@ func RequestPokemon() (pokemon model.Pokemon) {
 	attack := RequestPokemonAttack()
 	defense := RequestPokemonDefense()
 	pokemon = model.Pokemon{
-		Name: name,
-		Type: pokeomonType,
-		HP: hp,
-		Attack: attack,
+		Name:    name,
+		Type:    pokeomonType,
+		HP:      hp,
+		Attack:  attack,
 		Defense: defense,
 	}
 	return
