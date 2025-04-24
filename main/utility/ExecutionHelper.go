@@ -2,7 +2,6 @@ package utility
 
 import (
 	"GoDex/main/model"
-	"fmt"
 )
 
 func AddPokemon(name string, pokemon model.Pokemon, pokedex map[string]model.Pokemon) {
@@ -11,15 +10,15 @@ func AddPokemon(name string, pokemon model.Pokemon, pokedex map[string]model.Pok
 
 func GetPokemon(name string, pokedex map[string]model.Pokemon) {
 	if _, ok := pokedex[name]; ok {
-		fmt.Println(pokedex[name])
+		PrintPokemonModel(pokedex[name])
 	} else {
-		fmt.Println("Pokemon not found")
+		PrintPokemonNotFoundMessage(name)
 	}
 }
 
 func ListAllPokemonNames(pokedex map[string]model.Pokemon) {
 	for _, pokemon := range pokedex {
-		fmt.Println(pokemon.Name)
+		printPokemonName(pokemon.Name)
 	}
 }
 
