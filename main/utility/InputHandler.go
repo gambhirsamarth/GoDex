@@ -43,13 +43,13 @@ func RequestPokemonDefense() (pokemonDefense int) {
 
 func RequestPokemon() (pokemon model.Pokemon) {
 	name := RequestPokemonName()
-	pokeomonType := RequestPokemonType()
+	pokemonType := RequestPokemonType()
 	hp := RequestPokemonHP()
 	attack := RequestPokemonAttack()
 	defense := RequestPokemonDefense()
 	pokemon = model.Pokemon{
 		Name:    name,
-		Type:    pokeomonType,
+		Type:    pokemonType,
 		HP:      hp,
 		Attack:  attack,
 		Defense: defense,
