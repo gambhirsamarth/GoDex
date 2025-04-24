@@ -56,3 +56,9 @@ func RequestPokemon() (pokemon model.Pokemon) {
 	}
 	return
 }
+
+func GetPokemonForBattle(pokedex map[string]model.Pokemon) (pokemonOne, pokemonTwo model.Pokemon) {
+	pokemonOne = validateInputAndReturnPokemon(RequestPokemonName(), pokedex)
+	pokemonTwo = validateInputAndReturnPokemon(RequestPokemonName(), pokedex)
+	return
+}
