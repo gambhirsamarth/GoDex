@@ -23,12 +23,6 @@ func RequestPokemonType() (pokemonType string) {
 	return
 }
 
-func RequestPokemonHP() (pokemonHP int) {
-	PrintRequestPokemonHPMessage()
-	fmt.Scanln(&pokemonHP)
-	return
-}
-
 func RequestPokemonAttack() (pokemonAttack int) {
 	PrintRequestPokemonAttackMessage()
 	fmt.Scanln(&pokemonAttack)
@@ -44,7 +38,7 @@ func RequestPokemonDefense() (pokemonDefense int) {
 func RequestPokemon() (pokemon model.Pokemon) {
 	name := RequestPokemonName()
 	pokemonType := RequestPokemonType()
-	hp := RequestPokemonHP()
+	hp := 100
 	attack := RequestPokemonAttack()
 	defense := RequestPokemonDefense()
 	pokemon = model.Pokemon{
