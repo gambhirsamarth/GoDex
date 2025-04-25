@@ -10,51 +10,51 @@ func GetPokedex() map[string]model.Pokemon {
 
 func InitializeDefaultPokedex() {
 	pokedex = map[string]model.Pokemon{
-		"Pikachu": {
-			Name:    "Pikachu",
-			Type:    "Electric",
+		"PIKACHU": {
+			Name:    "PIKACHU",
+			Type:    "ELECTRIC",
 			HP:      100,
 			Attack:  55,
 			Defense: 40,
 		},
-		"Charmander": {
-			Name:    "Charmander",
-			Type:    "Fire",
+		"CHARMANDER": {
+			Name:    "CHARMANDER",
+			Type:    "FIRE",
 			HP:      100,
 			Attack:  52,
 			Defense: 43,
 		},
-		"Bulbasaur": {
-			Name:    "Bulbasaur",
-			Type:    "Grass",
+		"BULBASAUR": {
+			Name:    "BULBASAUR",
+			Type:    "GRASS",
 			HP:      100,
 			Attack:  49,
 			Defense: 49,
 		},
-		"Squirtle": {
-			Name:    "Squirtle",
-			Type:    "Water",
+		"SQUIRTLE": {
+			Name:    "SQUIRTLE",
+			Type:    "WATER",
 			HP:      100,
 			Attack:  48,
 			Defense: 65,
 		},
-		"Eevee": {
-			Name:    "Eevee",
-			Type:    "Normal",
+		"EEVEE": {
+			Name:    "EEVEE",
+			Type:    "NORMAL",
 			HP:      100,
 			Attack:  55,
 			Defense: 50,
 		},
-		"Jigglypuff": {
-			Name:    "Jigglypuff",
-			Type:    "Fairy",
+		"JIGGLYPUFF": {
+			Name:    "JIGGLYPUFF",
+			Type:    "FAIRY",
 			HP:      100,
 			Attack:  45,
 			Defense: 20,
 		},
-		"Meowth": {
-			Name:    "Meowth",
-			Type:    "Normal",
+		"MEOWTH": {
+			Name:    "MEOWTH",
+			Type:    "NORMAL",
 			HP:      100,
 			Attack:  45,
 			Defense: 35,

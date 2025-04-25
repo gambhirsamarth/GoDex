@@ -63,11 +63,6 @@ func PrintRequestPokemonTypeMessage() {
 	fmt.Println("Please enter the Pokemon type: ")
 }
 
-func PrintRequestPokemonHPMessage() {
-	fmt.Println()
-	fmt.Println("Please enter the Pokemon HP: ")
-}
-
 func PrintRequestPokemonAttackMessage() {
 	fmt.Println()
 	fmt.Println("Please enter the Pokemon attack: ")

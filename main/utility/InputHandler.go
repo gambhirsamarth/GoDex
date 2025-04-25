@@ -3,6 +3,7 @@ package utility
 import (
 	"GoDex/main/model"
 	"fmt"
+	"strings"
 )
 
 func RequestUserCommand() (command string) {
@@ -36,8 +37,8 @@ func RequestPokemonDefense() (pokemonDefense int) {
 }
 
 func RequestPokemon() (pokemon model.Pokemon) {
-	name := RequestPokemonName()
-	pokemonType := RequestPokemonType()
+	name := strings.ToUpper(RequestPokemonName())
+	pokemonType := strings.ToUpper(RequestPokemonType())
 	hp := 100
 	attack := RequestPokemonAttack()
 	defense := RequestPokemonDefense()
