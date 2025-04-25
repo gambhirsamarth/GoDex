@@ -24,7 +24,7 @@ func main() {
 			pokemon := utility.RequestPokemon()
 			utility.AddPokemon(pokemon.Name, pokemon, pokedex)
 		case "GET":
-			pokemonName := utility.RequestPokemonName()
+			pokemonName := strings.ToUpper(utility.RequestPokemonName())
 			utility.GetPokemon(pokemonName, pokedex)
 		case "BATTLE":
 			pokemonOne, pokemonTwo := utility.GetPokemonForBattle(pokedex)
