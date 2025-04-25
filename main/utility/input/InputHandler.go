@@ -1,37 +1,38 @@
-package utility
+package input
 
 import (
 	"GoDex/main/model"
+	"GoDex/main/utility/output"
 	"fmt"
 	"strings"
 )
 
 func RequestUserCommand() (command string) {
-	PrintRequestCommandMessage()
+	output.PrintRequestCommandMessage()
 	fmt.Scanln(&command)
 	return
 }
 
 func RequestPokemonName() (pokemonName string) {
-	PrintRequestPokemonNameMessage()
+	output.PrintRequestPokemonNameMessage()
 	fmt.Scanln(&pokemonName)
 	return
 }
 
 func RequestPokemonType() (pokemonType string) {
-	PrintRequestPokemonTypeMessage()
+	output.PrintRequestPokemonTypeMessage()
 	fmt.Scanln(&pokemonType)
 	return
 }
 
 func RequestPokemonAttack() (pokemonAttack int) {
-	PrintRequestPokemonAttackMessage()
+	output.PrintRequestPokemonAttackMessage()
 	fmt.Scanln(&pokemonAttack)
 	return
 }
 
 func RequestPokemonDefense() (pokemonDefense int) {
-	PrintRequestPokemonDefenseMessage()
+	output.PrintRequestPokemonDefenseMessage()
 	fmt.Scanln(&pokemonDefense)
 	return
 }
@@ -52,8 +53,3 @@ func RequestPokemon() (pokemon model.Pokemon) {
 	return
 }
 
-func GetPokemonForBattle(pokedex map[string]model.Pokemon) (pokemonOne, pokemonTwo model.Pokemon) {
-	pokemonOne = validateInputAndReturnPokemon(RequestPokemonName(), pokedex)
-	pokemonTwo = validateInputAndReturnPokemon(RequestPokemonName(), pokedex)
-	return
-}

@@ -1,15 +1,14 @@
 package service
 
-import "GoDex/main/model"
+import (
+	"GoDex/main/model"
+	"GoDex/main/utility/validation"
+)
 
-var pokedex = map[string]model.Pokemon{}
-
-func GetPokedex() map[string]model.Pokemon {
-	return pokedex
-}
+var Pokedex = map[string]model.Pokemon{}
 
 func InitializeDefaultPokedex() {
-	pokedex = map[string]model.Pokemon{
+	Pokedex = map[string]model.Pokemon{
 		"PIKACHU": {
 			Name:    "PIKACHU",
 			Type:    "ELECTRIC",
@@ -59,5 +58,11 @@ func InitializeDefaultPokedex() {
 			Attack:  45,
 			Defense: 35,
 		},
+	}
+}
+
+func AddPokemon(pokemon model.Pokemon) {
+	if !validation.CheckPokemonExistsInPokedex(pokemon.Name, Pokedex) {
+		Pokedex[pokemon.Name] = pokemon
 	}
 }

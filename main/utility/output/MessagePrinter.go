@@ -1,4 +1,4 @@
-package utility
+package output
 
 import (
 	"GoDex/main/model"
@@ -24,7 +24,7 @@ func PrintAvailableCommands() {
 
 func PrintInvalidCommandMessage() {
 	fmt.Println()
-	fmt.Println("Invalid command")
+	fmt.Println("Invalid commandExecutor")
 }
 
 func PrintExitMessage() {
@@ -50,7 +50,7 @@ func PrintBattleWinner(loser, winner string) {
 
 func PrintRequestCommandMessage() {
 	fmt.Println()
-	fmt.Println("Please enter a command: ")
+	fmt.Println("Please enter a commandExecutor: ")
 }
 
 func PrintRequestPokemonNameMessage() {
@@ -82,7 +82,7 @@ func PrintPokemonModel(pokemon model.Pokemon) {
 	fmt.Println(pokemon)
 }
 
-func printPokemonName(pokemonName string) {
+func PrintPokemonName(pokemonName string) {
 	fmt.Println()
 	fmt.Printf("Pokemon name: %s", pokemonName)
 }
