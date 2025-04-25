@@ -1,37 +1,39 @@
 package main
 
 import (
-	"GoDex/main/service"
-	"GoDex/main/utility"
+	"GoDex/main/service/battle"
+	"GoDex/main/service/commandexecutor"
+	"GoDex/main/service/localstorage"
+	"GoDex/main/utility/input"
+	"GoDex/main/utility/output"
 	"strings"
 )
 
 func main() {
-	service.InitializeDefaultPokedex()
-	pokedex := service.GetPokedex()
-	utility.PrintWelcomeMessage()
+	localstorage.InitializeDefaultPokedex()
+	output.PrintWelcomeMessage()
 	running := true
 	for running {
-		utility.PrintAvailableCommands()
-		command := utility.RequestUserCommand()
+		output.PrintAvailableCommands()
+		command := input.RequestUserCommand()
 		command = strings.ToUpper(command)
 		switch command {
 		case "EXIT":
 			running = false
 		case "LIST":
-			utility.ListAllPokemonNames(pokedex)
+			commandexecutor.ListAllPokemonNames()
 		case "ADD":
-			pokemon := utility.RequestPokemon()
-			utility.AddPokemon(pokemon.Name, pokemon, pokedex)
+			pokemon := input.RequestPokemon()
+			localstorage.AddPokemon(pokemon)
 		case "GET":
-			pokemonName := utility.RequestPokemonName()
-			utility.GetPokemon(pokemonName, pokedex)
+			pokemonName := strings.ToUpper(input.RequestPokemonName())
+			commandexecutor.GetPokemon(pokemonName)
 		case "BATTLE":
-			pokemonOne, pokemonTwo := utility.GetPokemonForBattle(pokedex)
-			service.Battle(pokemonOne, pokemonTwo)
+			pokemonOne, pokemonTwo := battle.GetPokemonForBattle()
+			battle.Battle(pokemonOne, pokemonTwo)
 		default:
-			utility.PrintInvalidCommandMessage()
+			output.PrintInvalidCommandMessage()
 		}
 	}
-	utility.PrintExitMessage()
+	output.PrintExitMessage()
 }
