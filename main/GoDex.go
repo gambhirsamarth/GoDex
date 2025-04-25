@@ -1,15 +1,16 @@
 package main
 
 import (
-	"GoDex/main/service"
-	"GoDex/main/utility/commandExecutor"
+	"GoDex/main/service/battle"
+	"GoDex/main/service/commandexecutor"
+	"GoDex/main/service/localstorage"
 	"GoDex/main/utility/input"
 	"GoDex/main/utility/output"
 	"strings"
 )
 
 func main() {
-	service.InitializeDefaultPokedex()
+	localstorage.InitializeDefaultPokedex()
 	output.PrintWelcomeMessage()
 	running := true
 	for running {
@@ -20,16 +21,16 @@ func main() {
 		case "EXIT":
 			running = false
 		case "LIST":
-			commandExecutor.ListAllPokemonNames()
+			commandexecutor.ListAllPokemonNames()
 		case "ADD":
 			pokemon := input.RequestPokemon()
-			service.AddPokemon(pokemon)
+			localstorage.AddPokemon(pokemon)
 		case "GET":
 			pokemonName := strings.ToUpper(input.RequestPokemonName())
-			commandExecutor.GetPokemon(pokemonName)
+			commandexecutor.GetPokemon(pokemonName)
 		case "BATTLE":
-			pokemonOne, pokemonTwo := service.GetPokemonForBattle()
-			service.Battle(pokemonOne, pokemonTwo)
+			pokemonOne, pokemonTwo := battle.GetPokemonForBattle()
+			battle.Battle(pokemonOne, pokemonTwo)
 		default:
 			output.PrintInvalidCommandMessage()
 		}

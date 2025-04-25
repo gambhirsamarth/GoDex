@@ -1,4 +1,4 @@
-package service
+package localstorage
 
 import (
 	"GoDex/main/model"

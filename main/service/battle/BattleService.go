@@ -1,7 +1,8 @@
-package service
+package battle
 
 import (
 	"GoDex/main/model"
+	"GoDex/main/service/localstorage"
 	"GoDex/main/utility/input"
 	"GoDex/main/utility/output"
 	"GoDex/main/utility/validation"
@@ -48,7 +49,7 @@ func CalculateDamage(attack, defense int) int {
 }
 
 func GetPokemonForBattle() (pokemonOne, pokemonTwo model.Pokemon) {
-	pokemonOne = validation.ValidateInputAndReturnPokemon(input.RequestPokemonName(), Pokedex)
-	pokemonTwo = validation.ValidateInputAndReturnPokemon(input.RequestPokemonName(), Pokedex)
+	pokemonOne = validation.ValidateInputAndReturnPokemon(input.RequestPokemonName(), localstorage.Pokedex)
+	pokemonTwo = validation.ValidateInputAndReturnPokemon(input.RequestPokemonName(), localstorage.Pokedex)
 	return
 }
