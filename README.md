@@ -17,6 +17,7 @@ This project is beginner-friendly and helps you understand Go concepts like:
 - ✅ Add a new Pokémon to the Pokédex
 - ✅ List all Pokémon names
 - ✅ View details of a specific Pokémon
+- ✅ Battle between two Pokémon
 - 🚧 More features coming soon!
 
 ---
@@ -36,9 +37,10 @@ go run main.go
 
 ## 🧪 Available Commands
 ```
-ADD    - Add a new Pokémon (Coming Soon)
+ADD    - Add a new Pokémon
 LIST   - Show all Pokémon names
 GET    - Get details of a specific Pokémon
+BATTLE - Battle between two Pokémon
 EXIT   - Exit the app
 ```
 
